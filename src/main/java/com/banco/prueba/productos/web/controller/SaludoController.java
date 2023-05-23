@@ -21,7 +21,7 @@ public class SaludoController {
         return "Hola Mundo Carlos1";
     }
     
-	@CrossOrigin(origins = {"http://localhost:80", "http://localhost:4200", "http://localhost:8080"})
+	@CrossOrigin(origins = {"http://localhost:80", "http://localhost:4200", "http://localhost:8080", "http://localhost"})
     @GetMapping("/{id}")
     public Producto getProduct(@PathVariable("id") int productId) {
         return productoService.recuperarProducto();
