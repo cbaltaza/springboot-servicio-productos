@@ -1,12 +1,40 @@
 package com.banco.prueba.productos.domain.model;
 
-public class Producto {
+import java.io.Serializable;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
+public class Producto  implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7823655254211397177L;
+
+	@Id
+	@GeneratedValue
+	private Long id;
+	
+	@Column
     private String productId;
+	
+	@Column
     private String name;
-    private String categoryId;
-    private String price;
-    private String stock;
-    private String active;
+    
+	@Column
+	private String categoryId;
+    
+	@Column
+	private String price;
+    
+	@Column
+	private String stock;
+    
+	@Column
+	private String active;
 
     public String getProductId() {
         return productId;
@@ -55,4 +83,19 @@ public class Producto {
     public void setActive(String active) {
         this.active = active;
     }
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+    
 }
